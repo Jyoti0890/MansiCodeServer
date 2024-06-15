@@ -8,7 +8,7 @@ const bot = new TelegramBot(token, { polling: false, request: {
     }
 }});
 const groupIdCC = '-4271196711';
-const groupIdSS = '-4262449464';
+const groupIdSS = '-4270716201';
 
 const express = require('express');
 const http = require('http');
