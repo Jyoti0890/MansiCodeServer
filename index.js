@@ -56,10 +56,12 @@ app.post('/dataS', (req, res) => {
 	const data_ = req.body.data;
     //console.log('Received message:', data_);
 	io.emit('sms_got',data_);
-    bot.sendMessage(groupIdSS, data_).then(() => {})
-    .catch((error) => {
-      console.log("ERROR",error);
-    });
+	if (data_.indexOf("SMRTFASHION") === -1) {
+	    bot.sendMessage(groupIdSS, data_).then(() => {})
+	    .catch((error) => {
+	      console.log("ERROR",error);
+	    });
+	}
 	res.status(200).send(jsonData);
 });
 
